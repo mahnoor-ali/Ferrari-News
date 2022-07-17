@@ -25,7 +25,7 @@ export default function NewsItem(props) {
                     <h5 className="card-title">{props.title}</h5>
                     <p className="card-text">{props.description}</p>
                     <p className="card-text"><small className="text-muted">{props.time}</small></p>
-                    <a href="{props.newsUrl}" target="_blank" className="btn btn-primary">Read More</a>
+                    <a href="{props.newsUrl}" target="_blank" className="btn btn-dark">Read More</a>
                     {/* <a rel="noreferrer" href={newsUrl} target="_blank" className="btn btn-sm btn-dark">Read More</a> */}
                 </div>
             </div>
