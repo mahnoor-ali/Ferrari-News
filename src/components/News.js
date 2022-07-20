@@ -20,7 +20,7 @@ export default function News(props) {
         setIsLoading(false);
         setTotalresponses(parsedData.totalResults);
         setArticles(parsedData.articles);
-        console.log(articles);
+        console.log(parsedData.articles);
     }
 
     const handleNext = async () => {
@@ -37,7 +37,7 @@ export default function News(props) {
     // update page with news content when page renders for the first time
     useEffect(() => {
         updatePage();
-    })
+    },[])
 
     return (
         <div className='container'>
@@ -46,7 +46,7 @@ export default function News(props) {
                 <div className='row'>
                     {articles.map((newsElement) => {
                         return <div className='col-md-4' key={newsElement.url}>
-                            <NewsItem title={newsElement.title ? newsElement.title : "Breaking News"} description={newsElement.description ? newsElement.description : "Breaking news you must read"} newsUrl={newsElement.url} imageUrl={newsElement.urlToImage} />
+                            <NewsItem title={newsElement.title ? newsElement.title : "Breaking News"} description={newsElement.description ? newsElement.description : "Breaking news you must read"} newsUrl={newsElement.url} imageUrl={newsElement.urlToImage} author={newsElement.author} date={newsElement.publishedAt} source={newsElement.source.name} />
                         </div>
                     }
                     )}
